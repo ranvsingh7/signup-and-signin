@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="signup.css">
+    <title>Signup</title>
+</head>
+<body>
+    <img src="https://sso.masaischool.com/brand_dark.svg" alt="">
+   <form>
+    <div id="container">
+        <h1>Sign Up</h1>
+        <P>Full name</P>
+        <input id="name" type="text" placeholder="Enter your full name">
+        <p>Email</p>
+        <input id="email" type="email" name="email" placeholder="Enter email">
+        <p>Password</p>
+        <input id="password" type="password" placeholder="Enter password">
+
+        <input type="submit" value="SIGN UP">
+
+        <p>Already have an account?<a href="signin.html">Sign In</a></p>
+    </div>
+   </form>
+</body>
+</html>
+
+<script>
+    document.querySelector("form").addEventListener("submit",myFunction)
+    loginData=JSON.parse(localStorage.getItem("data"))||[]
+    console.log(loginData)
+    function myFunction(){
+        event.preventDefault()
+        var data={
+            name:document.querySelector("#name").value,
+            email:document.querySelector("#email").value,
+            password:document.querySelector("#password").value
+        }
+       loginData.push(data)
+       localStorage.setItem("data",JSON.stringify(loginData))
+       alert("Sign up Successful")
+       }
+</script>

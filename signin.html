@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">
+
+    <title>sign in</title>
+</head>
+<body>
+    <img src="https://sso.masaischool.com/brand_dark.svg" alt="">
+    <form>
+     <div id="container">
+         <h1>Sign In</h1>
+         <p>Email</p>
+         <input id="email" type="email" name="email" placeholder="Enter email">
+         <p>Password</p>
+         <input id="password" type="password" placeholder="Enter password">
+ 
+         <input type="submit" value="SIGN IN">
+ 
+         <p>Don't have an account?<a href="signup.html">Sign Up</a></p>
+     </div>
+    </form>
+    
+</body>
+</html>
+
+<script>
+    var loginData=JSON.parse(localStorage.getItem("data"))
+   
+
+        
+    
+
+
+    
+    document.querySelector("form").addEventListener("submit",myFunction)
+
+    function myFunction(){
+
+        event.preventDefault
+
+        
+
+        var entered_email=document.querySelector("#email").value
+
+        var entered_password=document.querySelector("#password").value
+
+            var user_found;
+            var user_not_found;
+        loginData.forEach(function(elem){
+            if(entered_email==elem.email && entered_password==elem.password){
+                user_found=true;
+            }
+            
+            
+
+        })
+
+        if(user_found==true){
+            alert("Login Success")
+        }
+        else{
+            alert("Please Check Entered Email and Password")
+        }
+        
+
+       
+
+
+
+    }
+
+    
+</script>
